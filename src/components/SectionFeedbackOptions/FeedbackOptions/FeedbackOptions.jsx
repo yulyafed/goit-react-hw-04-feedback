@@ -1,20 +1,30 @@
 import PropTypes from 'prop-types';
 import { List, Item, Button } from './FeedbackOptions.styled';
 
-export const ListFeedbackOptions = ({ options, onLeaveFeedback }) => { 
-
+export const ListFeedbackOptions = ({
+  options,
+  onLeaveGoodFeedback,
+  onLeaveNeutralFeedback,
+  onLeaveBadFeedback,
+}) => {
   return (
-
     <List>
-      {options.map((option) => (
+      {options.map(option => (
         <Item key={option.id}>
-          <Button onClick={() => { onLeaveFeedback(option.id) }}> {option.name} </Button>
+          <Button
+            onClick={() => {
+              onLeaveGoodFeedback(option.id);
+              onLeaveNeutralFeedback(option.id);
+              onLeaveBadFeedback(option.id);
+            }}
+          >
+            {option.name}
+          </Button>
         </Item>
       ))}
     </List>
-    
   );
-} 
+}; 
 
 ListFeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(
