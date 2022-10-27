@@ -19,7 +19,7 @@ export const ListFeedbackOptions = ({ options, onLeaveFeedback }) => {
 ListFeedbackOptions.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,}),
   ).isRequired,
 };

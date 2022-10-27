@@ -15,7 +15,7 @@ export const SectionFeedbacks = ({ options, onLeaveFeedback }) => {
 SectionFeedbacks.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,}),
   ).isRequired,
 };
